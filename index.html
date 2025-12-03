@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Merry Crismas</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(180deg, #c4091a, #8a000c, #4a0004);
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    .title {
+      font-family: "Luckiest Guy", cursive;
+      font-size: 60px;
+      margin-top: 60px;
+      color: #ffeb3b;
+      text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      letter-spacing: 2px;
+    }
+
+    .msg {
+      margin-top: -10px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.45);
+    }
+
+    /* Play Button */
+    .btn {
+      margin-top: 25px;
+      padding: 15px 35px;
+      background: #00ff87;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #003b09;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+      transition: 0.2s;
+    }
+
+    .btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Snowflakes */
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      color: white;
+      font-size: 20px;
+      animation: fall linear infinite;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-10vh); }
+      100% { transform: translateY(110vh); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="title">Merry Crismas</div>
+  <div class="msg">Wishing you joy, love, and a magical holiday season! 🎄</div>
+
+  <button class="btn" id="playMusic">▶ Play Music</button>
+
+  <!-- Audio -->
+  <audio id="bgAudio" loop>
+    <source src="https://files.catbox.moe/ign6cu.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Snowflake generator
+    for (let i = 0; i < 40; i++) {
+      let snow = document.createElement("div");
+      snow.className = "snowflake";
+      snow.innerHTML = "❄";
+
+      snow.style.left = Math.random() * 100 + "vw";
+      snow.style.opacity = Math.random();
+      snow.style.fontSize = (14 + Math.random() * 20) + "px";
+      snow.style.animationDuration = (5 + Math.random() * 10) + "s";
+
+      document.body.appendChild(snow);
+    }
+
+    // Music button
+    const music = document.getElementById("bgAudio");
+    const btn = document.getElementById("playMusic");
+
+    btn.addEventListener("click", () => {
+      if (music.paused) {
+        music.play();
+        btn.textContent = "⏸ Pause Music";
+      } else {
+        music.pause();
+        btn.textContent = "▶ Play Music";
+      }
+    });
+  </script>
+</body>
+</html>
