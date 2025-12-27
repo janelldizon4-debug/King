@@ -1,19 +1,19 @@
 {
   "name": "CPM Account Notes",
   "short_name": "CPM Notes",
-  "start_url": "./index.html",
-  "scope": "./",
+  "start_url": "/King/index.html",
+  "scope": "/King/",
   "display": "standalone",
   "background_color": "#f2f2f2",
   "theme_color": "#2c7be5",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "/King/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icon-512.png",
+      "src": "/King/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
