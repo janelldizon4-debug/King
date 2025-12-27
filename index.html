@@ -5,20 +5,11 @@
 <title>CPM Account Notes</title>
 
 <!-- PWA -->
-<link rel="manifest" href="manifest.json">
+<link rel="manifest" href="./manifest.json">
 <meta name="theme-color" content="#2c7be5">
 
 <style>
 body{font-family:Arial;background:#f2f2f2;padding:20px}
-h2,h3{text-align:center}
-table{width:100%;border-collapse:collapse;background:#fff;margin-bottom:25px}
-th,td{border:1px solid #000;padding:6px;font-size:13px}
-th{background:#ddd}
-.active{background:#d4edda}
-.inactive{background:#f8d7da}
-.personal{background:#d1ecf1}
-td[contenteditable]{background:#fffbe6}
-button{padding:10px 20px;font-size:16px}
 </style>
 </head>
 <body>
@@ -26,7 +17,7 @@ button{padding:10px 20px;font-size:16px}
 <h2>CPM ACCOUNT NOTES</h2>
 
 <div id="tables">
- <!-- CPM1 -->
+<!-- CPM1 -->
 <h2>CPM1 ACCOUNTS </h2>
 <table>
 <tr><th>#</th><th>Email</th><th>Password</th><th>Status</th></tr>
@@ -151,59 +142,28 @@ button{padding:10px 20px;font-size:16px}
 <tr class="personal"><td contenteditable>bugtong767@gmail.com</td><td contenteditable>nel1234</td><td>Personal</td></tr>
 <tr class="personal"><td contenteditable>nar076987@gmail.com</td><td contenteditable>bugtong0010</td><td>Personal</td></tr>
 
-</table> 
+</table>
 
 </div>
 
 <button onclick="saveAll()">💾 Save</button>
 
 <script>
-const container = document.getElementById("tables");
-
-/* LOAD */
-function loadAll(){
-  const saved = localStorage.getItem("CPM_NOTES_DATA");
-  if(saved){
-    container.innerHTML = saved;
-  }
-  applyStatusColors();
-}
-
-/* SAVE */
 function saveAll(){
-  localStorage.setItem("CPM_NOTES_DATA", container.innerHTML);
-  applyStatusColors();
-  alert("Saved! Status will stay even after refresh.");
+  localStorage.setItem("CPM_NOTES_DATA",
+    document.getElementById("tables").innerHTML
+  );
 }
 
-/* COLOR STATUS */
-function applyStatusColors(){
-  const rows = document.querySelectorAll("table tr");
-  rows.forEach((row,i)=>{
-    if(i===0) return;
-    row.classList.remove("active","inactive");
-    const statusCell = row.cells[row.cells.length-1];
-    if(!statusCell) return;
-    const status = statusCell.innerText.toLowerCase();
-    if(status.includes("not")){
-      row.classList.add("inactive");
-    } else if(status.includes("active")){
-      row.classList.add("active");
-    }
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js")
+      .then(() => console.log("SW registered"))
+      .catch(err => console.error("SW error", err));
   });
 }
-
-document.addEventListener("input", applyStatusColors);
-
-/* PWA SERVICE WORKER */
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js")
-    .then(() => console.log("Service Worker registered"))
-    .catch(err => console.error("SW error", err));
-}
-
-loadAll();
 </script>
 
 </body>
-  </html>
+                                                                         </html>
