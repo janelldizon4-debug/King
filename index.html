@@ -1,116 +1,209 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Merry Crismas</title>
+<meta charset="UTF-8">
+<title>CPM Account Notes</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2c7be5">
 
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(180deg, #c4091a, #8a000c, #4a0004);
-      overflow: hidden;
-      font-family: Arial, sans-serif;
-      color: white;
-      text-align: center;
-    }
-
-    .title {
-      font-family: "Luckiest Guy", cursive;
-      font-size: 60px;
-      margin-top: 60px;
-      color: #ffeb3b;
-      text-shadow: 0 4px 10px rgba(0,0,0,0.5);
-      letter-spacing: 2px;
-    }
-
-    .msg {
-      margin-top: -10px;
-      font-size: 20px;
-      font-weight: bold;
-      color: #fff;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.45);
-    }
-
-    /* Play Button */
-    .btn {
-      margin-top: 25px;
-      padding: 15px 35px;
-      background: #00ff87;
-      border: none;
-      border-radius: 10px;
-      font-size: 18px;
-      font-weight: bold;
-      color: #003b09;
-      cursor: pointer;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-      transition: 0.2s;
-    }
-
-    .btn:active {
-      transform: scale(0.95);
-    }
-
-    /* Snowflakes */
-    .snowflake {
-      position: fixed;
-      top: -10px;
-      color: white;
-      font-size: 20px;
-      animation: fall linear infinite;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    }
-
-    @keyframes fall {
-      0% { transform: translateY(-10vh); }
-      100% { transform: translateY(110vh); }
-    }
-  </style>
+<style>
+body{font-family:Arial;background:#f2f2f2;padding:20px}
+h2,h3{text-align:center}
+table{width:100%;border-collapse:collapse;background:#fff;margin-bottom:25px}
+th,td{border:1px solid #000;padding:6px;font-size:13px}
+th{background:#ddd}
+.active{background:#d4edda}
+.inactive{background:#f8d7da}
+.personal{background:#d1ecf1}
+td[contenteditable]{background:#fffbe6}
+button{padding:10px 20px;font-size:16px}
+</style>
 </head>
 <body>
 
-  <div class="title">Merry Crismas</div>
-  <div class="msg">Wishing you joy, love, and a magical holiday season! 🎄</div>
+<h2>CPM ACCOUNT NOTES</h2>
 
-  <button class="btn" id="playMusic">▶ Play Music</button>
+<div id="tables">
+ <!-- CPM1 -->
+<h2>CPM1 ACCOUNTS </h2>
+<table>
+<tr><th>#</th><th>Email</th><th>Password</th><th>Status</th></tr>
 
-  <!-- Audio -->
-  <audio id="bgAudio" loop>
-    <source src="https://files.catbox.moe/ign6cu.mp3" type="audio/mpeg">
-  </audio>
+<tr class="active"><td>1</td><td contenteditable>nelz1@gmail.com</td><td contenteditable>1232000</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>2</td><td contenteditable>nelz2@gmail.com</td><td contenteditable>1232000</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>3</td><td contenteditable>nelz3@gmail.com</td><td contenteditable>1232000</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>4</td><td contenteditable>nelz4@gmail.com</td><td contenteditable>12142005</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>5</td><td contenteditable>nelz5@gmail.com</td><td contenteditable>6242001</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>6</td><td contenteditable>nelz6@gmail.com</td><td contenteditable>6202004</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>7</td><td contenteditable>nelz7@gmail.com</td><td contenteditable>032898</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>8</td><td contenteditable>nelz8@gmail.com</td><td contenteditable>115460</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>9</td><td contenteditable>nelz9@gmail.com</td><td contenteditable>105257</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>10</td><td contenteditable>nelz10@gmail.com</td><td contenteditable>058029</td><td contenteditable>Active</td></tr>
 
-  <script>
-    // Snowflake generator
-    for (let i = 0; i < 40; i++) {
-      let snow = document.createElement("div");
-      snow.className = "snowflake";
-      snow.innerHTML = "❄";
+<tr class="active"><td>11</td><td contenteditable>nelz01@gmail.com</td><td contenteditable>057005</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>12</td><td contenteditable>nelz02@gmail.com</td><td contenteditable>1232000</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>13</td><td contenteditable>nelz03@gmail.com</td><td contenteditable>7f02006d</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>14</td><td contenteditable>nelz04@gmail.com</td><td contenteditable>14000000</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>15</td><td contenteditable>nelz05@gmail.com</td><td contenteditable>ff00ffff</td><td contenteditable>Active</td></tr>
 
-      snow.style.left = Math.random() * 100 + "vw";
-      snow.style.opacity = Math.random();
-      snow.style.fontSize = (14 + Math.random() * 20) + "px";
-      snow.style.animationDuration = (5 + Math.random() * 10) + "s";
+<tr class="inactive"><td>16</td><td contenteditable>vip101@gmail.com</td><td contenteditable>wanya0002</td><td contenteditable>Not Active</td></tr>
 
-      document.body.appendChild(snow);
+<tr class="active"><td>17</td><td contenteditable>nelz010@gmail.com</td><td contenteditable>SXT-IXQLR1HIJE</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>18</td><td contenteditable>nelz20@gmail.com</td><td contenteditable>SXT-IXQLR1HIJE</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>19</td><td contenteditable>cris050@gmail.com</td><td contenteditable>SXT-IXQLR1HIJE</td><td contenteditable>Active</td></tr>
+
+<tr class="inactive"><td>20</td><td contenteditable>cris060@gmail.com</td><td contenteditable>0x7f02006d</td><td contenteditable>Not Active</td></tr>
+<tr class="inactive"><td>21</td><td contenteditable>cris070@gmail.com</td><td contenteditable>SXT-IXQLR1HIJE</td><td contenteditable>Not Active</td></tr>
+<tr class="inactive"><td>22</td><td contenteditable>free020@gmail.com</td><td contenteditable>tiktok.com/@arnelb11111</td><td contenteditable>Not Active</td></tr>
+<tr class="inactive"><td>23</td><td contenteditable>free030@gmail.com</td><td contenteditable>cris24</td><td contenteditable>Not Active</td></tr>
+<tr class="inactive"><td>24</td><td contenteditable>free040@gmail.com</td><td contenteditable>cris24</td><td contenteditable>Not Active</td></tr>
+<tr class="inactive"><td>25</td><td contenteditable>free050@gmail.com</td><td contenteditable>cpm123</td><td contenteditable>Not Active</td></tr>
+
+<tr class="active"><td>26</td><td contenteditable>free100@gmail.com</td><td contenteditable>123456</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>27</td><td contenteditable>clone050@gmail.com</td><td contenteditable>123456</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>28</td><td contenteditable>dry@free.cars</td><td contenteditable>cris1232000</td><td contenteditable>Active</td></tr>
+
+<tr class="active"><td>29</td><td contenteditable>update390@gmail.com</td><td contenteditable>newv21</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>30</td><td contenteditable>alex490@gmail.com</td><td contenteditable>newv19</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>31</td><td contenteditable>nelz2000@gmail.com</td><td contenteditable>1232000</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>32</td><td contenteditable>premium2000@gmail.com</td><td contenteditable>E691D827A7</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>33</td><td contenteditable>premium100@gmail.com</td><td contenteditable>E691D827A7</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>34</td><td contenteditable>arnel400@gmail.com</td><td contenteditable>D272C02328</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>35</td><td contenteditable>premium200@gmail.com</td><td contenteditable>E691D827A7</td><td contenteditable>Active</td></tr>
+
+<tr class="active"><td>36</td><td contenteditable>arnel10@gmail.com</td><td contenteditable>123200</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>37</td><td contenteditable>arnel03@gmail.com</td><td contenteditable>1232000</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>38</td><td contenteditable>arnel01@gmail.com</td><td contenteditable>1232000</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>39</td><td contenteditable>arnel06@gmail.com</td><td contenteditable>1232000</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>40</td><td contenteditable>abel14@gmail.com</td><td contenteditable>newv21</td><td contenteditable>Active</td></tr>
+
+<tr class="active"><td>41</td><td contenteditable>adrian690@gmail.com</td><td contenteditable>newv14</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>42</td><td contenteditable>adrian490@gmail.com</td><td contenteditable>newv18</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>43</td><td contenteditable>alex690@gmail.com</td><td contenteditable>0987654</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>44</td><td contenteditable>jr019@gmail.com</td><td contenteditable>0987654</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>45</td><td contenteditable>venven03@gmail.com</td><td contenteditable>0987654</td><td contenteditable>Active</td></tr>
+
+<tr class="active"><td>46</td><td contenteditable>mavn@gmail.com</td><td contenteditable>0987654</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>47</td><td contenteditable>mavn590@gmail.com</td><td contenteditable>newv21</td><td contenteditable>Active</td></tr>
+
+<tr class="active"><td>48</td><td contenteditable>cris0010@gmail.com</td><td contenteditable>0987654</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>49</td><td contenteditable>cris023@gmail.com</td><td contenteditable>newv21</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>50</td><td contenteditable>termux590@gmail.com</td><td contenteditable>E691D827A7</td><td contenteditable>Active</td></tr>
+
+<tr class="active"><td>51</td><td contenteditable>arnel111@gmail.com</td><td contenteditable>123456</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>52</td><td contenteditable>arnel005@gmail.com</td><td contenteditable>123456</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>53</td><td contenteditable>nel600@gmail.com</td><td contenteditable>123456</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>54</td><td contenteditable>nel700@gmail.com</td><td contenteditable>123456</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>55</td><td contenteditable>nel222@gmail.com</td><td contenteditable>123456</td><td contenteditable>Active</td></tr>
+
+</table>
+
+
+<!-- CPM2 -->
+<h2>CPM2 ACCOUNTS (23)</h2>
+<table>
+<tr><th>#</th><th>Email</th><th>Password</th><th>Status</th></tr>
+
+<tr class="inactive"><td>1</td><td contenteditable>stock010@gmail.com</td><td contenteditable>3E307D252B</td><td contenteditable>Not Active</td></tr>
+<tr class="active"><td>2</td><td contenteditable>cris003@gmail.com</td><td contenteditable>654321</td><td contenteditable>Active</td></tr>
+<tr class="inactive"><td>3</td><td contenteditable>free002@gmail.com</td><td contenteditable>654321</td><td contenteditable>Not Active</td></tr>
+<tr class="inactive"><td>4</td><td contenteditable>trial590@gmail.com</td><td contenteditable>trial0010</td><td contenteditable>Not Active</td></tr>
+<tr class="active"><td>5</td><td contenteditable>copy@cpm1.com</td><td contenteditable>nel0010</td><td contenteditable>Active</td></tr>
+<tr class="inactive"><td>6</td><td contenteditable>nel003@gmail.com</td><td contenteditable>nel003</td><td contenteditable>Not Active</td></tr>
+
+<tr class="active"><td>7</td><td contenteditable>test010@gmail.com</td><td contenteditable>654321</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>8</td><td contenteditable>arnel003@gmail.com</td><td contenteditable>torogi</td><td contenteditable>Active</td></tr>
+<tr class="inactive"><td>9</td><td contenteditable>free5254@gmail.com</td><td contenteditable>123456</td><td contenteditable>Not Active</td></tr>
+
+<tr class="active"><td>10</td><td contenteditable>FREE100@gmail.com</td><td contenteditable>123456</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>11</td><td contenteditable>free200@gmail.com</td><td contenteditable>123456</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>12</td><td contenteditable>avj10@gmail.com</td><td contenteditable>654321</td><td contenteditable>Active</td></tr>
+
+<tr class="active"><td>13</td><td contenteditable>cris030@gmail.com</td><td contenteditable>1232000</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>14</td><td contenteditable>vip010@gmail.com</td><td contenteditable>1232000</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>15</td><td contenteditable>vip030@gmail.com</td><td contenteditable>1232000</td><td contenteditable>Active</td></tr>
+
+<tr class="active"><td>16</td><td contenteditable>test030@gmail.com</td><td contenteditable>123456</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>17</td><td contenteditable>nel0010@gmail.com</td><td contenteditable>1232000</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>18</td><td contenteditable>test490@gmail.com</td><td contenteditable>123456</td><td contenteditable>Active</td></tr>
+
+<tr class="active"><td>19</td><td contenteditable>emblem@gmail.com</td><td contenteditable>654321</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>20</td><td contenteditable>cris490@gmail.com</td><td contenteditable>654321</td><td contenteditable>Active</td></tr>
+<tr class="active"><td>21</td><td contenteditable>solid.cpm2@gmail.com</td><td contenteditable>654321</td><td contenteditable>Active</td></tr>
+
+<tr class="active"><td>22</td><td contenteditable>cpm_2@cpm2.com</td><td contenteditable>Cpm2490</td><td contenteditable>Active</td></tr>
+<tr class="inactive"><td>23</td><td contenteditable>test@2.com</td><td contenteditable>00112233</td><td contenteditable>Not Active</td></tr>
+
+</table>
+
+<!-- PERSONAL -->
+<h3>PERSONAL ACCOUNTS</h3>
+<table>
+<tr><th>Email</th><th>Password</th><th>Status</th></tr>
+
+<tr class="personal"><td contenteditable>nel67341@gmail.com</td><td contenteditable>nel67341</td><td>Personal</td></tr>
+<tr class="personal"><td contenteditable>ivan490@gmail.com</td><td contenteditable>cr123456</td><td>Personal</td></tr>
+<tr class="personal"><td contenteditable>abugtong490@gmail.com</td><td contenteditable>bugtong0010</td><td>Personal</td></tr>
+<tr class="personal"><td contenteditable>cris030@gmail.com</td><td contenteditable>SXT-IXQLR1HIJE</td><td>Personal</td></tr>
+<tr class="personal"><td contenteditable>cris890@gmail.com</td><td contenteditable>12345678</td><td>Personal</td></tr>
+<tr class="personal"><td contenteditable>bugtong767@gmail.com</td><td contenteditable>nel1234</td><td>Personal</td></tr>
+<tr class="personal"><td contenteditable>nar076987@gmail.com</td><td contenteditable>bugtong0010</td><td>Personal</td></tr>
+
+</table> 
+
+</div>
+
+<button onclick="saveAll()">💾 Save</button>
+
+<script>
+const container = document.getElementById("tables");
+
+/* LOAD */
+function loadAll(){
+  const saved = localStorage.getItem("CPM_NOTES_DATA");
+  if(saved){
+    container.innerHTML = saved;
+  }
+  applyStatusColors();
+}
+
+/* SAVE */
+function saveAll(){
+  localStorage.setItem("CPM_NOTES_DATA", container.innerHTML);
+  applyStatusColors();
+  alert("Saved! Status will stay even after refresh.");
+}
+
+/* COLOR STATUS */
+function applyStatusColors(){
+  const rows = document.querySelectorAll("table tr");
+  rows.forEach((row,i)=>{
+    if(i===0) return;
+    row.classList.remove("active","inactive");
+    const statusCell = row.cells[row.cells.length-1];
+    if(!statusCell) return;
+    const status = statusCell.innerText.toLowerCase();
+    if(status.includes("not")){
+      row.classList.add("inactive");
+    } else if(status.includes("active")){
+      row.classList.add("active");
     }
+  });
+}
 
-    // Music button
-    const music = document.getElementById("bgAudio");
-    const btn = document.getElementById("playMusic");
+document.addEventListener("input", applyStatusColors);
 
-    btn.addEventListener("click", () => {
-      if (music.paused) {
-        music.play();
-        btn.textContent = "⏸ Pause Music";
-      } else {
-        music.pause();
-        btn.textContent = "▶ Play Music";
-      }
-    });
-  </script>
+/* PWA SERVICE WORKER */
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js")
+    .then(() => console.log("Service Worker registered"))
+    .catch(err => console.error("SW error", err));
+}
+
+loadAll();
+</script>
+
 </body>
-</html>
+  </html>
